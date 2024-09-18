@@ -21,9 +21,9 @@ st.markdown(
         background-color: #007BFF;  /* Blue color */
         color: white !important;     /* Text color */
         border: none;                /* Remove border */
-        padding: 10px 20px;          /* Padding */
-        border-radius: 5px;          /* Rounded corners */
-        cursor: pointer;              /* Pointer cursor on hover */
+        padding: 10px 20px;         /* Padding */
+        border-radius: 5px;         /* Rounded corners */
+        cursor: pointer;             /* Pointer cursor on hover */
     }
     .stButton > button:hover {
         background-color: #0056b3;   /* Darker blue on hover */
@@ -34,17 +34,20 @@ st.markdown(
 )
 
 if st.button("Classify"):
-    # Preprocess and transform the input
-    input_data = vectorizer.transform([user_input])
-    
-    # Make prediction
-    prediction = model.predict(input_data)
-    
-    # Display result
-    if prediction[0] == 0:  # Check if the prediction is 0 (ham)
-        st.success("This message is classified as: **Ham**")
-    else:  # Otherwise, it must be 1 (spam)
-        st.error("This message is classified as: **Spam**")
+    if not user_input.strip():  # Check if the input is empty or consists only of whitespace
+        st.error("Please enter a message to classify.")
+    else:
+        # Preprocess and transform the input
+        input_data = vectorizer.transform([user_input])
+        
+        # Make prediction
+        prediction = model.predict(input_data)
+        
+        # Display result
+        if prediction[0] == 0:  # Check if the prediction is 0 (ham)
+            st.success("This message is classified as: **Ham**")
+        else:  # Otherwise, it must be 1 (spam)
+            st.error("This message is classified as: **Spam**")
 
 # Optional: Add more information or features
 st.sidebar.header("About")
