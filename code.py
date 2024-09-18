@@ -3,8 +3,8 @@ import joblib
 import pandas as pd
 
 # Load the saved model and vectorizer
-model = joblib.load('bernoulli_NB_TFIDF(0.991928).pkl')
-vectorizer = joblib.load('tfidf_vectorizer.pkl')
+model = joblib.load('logistic_regression_CV(0.985650).pkl')
+vectorizer = joblib.load('complete_cv_vectorizer.pkl')
 
 # Set up the Streamlit app
 st.title("Spam/Ham Classifier")
@@ -28,4 +28,4 @@ if st.button("Classify"):
 
 # Optional: Add more information or features
 st.sidebar.header("About")
-st.sidebar.text("This app classifies messages as spam or ham using a Bernoulli Naive Bayes model.")
+st.sidebar.text("This app classifies messages as spam or ham using a Logitic Regression model.")
