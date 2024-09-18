@@ -21,11 +21,11 @@ if st.button("Classify"):
     prediction = model.predict(input_data)
     
     # Display result
-    if prediction[0] == 'ham':
+    if prediction[0] == 0:  # Check if the prediction is 0 (ham)
         st.success("This message is classified as: **Ham**")
-    else:
+    else:  # Otherwise, it must be 1 (spam)
         st.error("This message is classified as: **Spam**")
 
 # Optional: Add more information or features
 st.sidebar.header("About")
-st.sidebar.text("This app classifies messages as spam or ham using a Logitic Regression model.")
+st.sidebar.text("This app classifies messages as spam or ham using a Logistic Regression model.")
