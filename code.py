@@ -28,4 +28,4 @@ if st.button("Classify"):
 
 # Optional: Add more information or features
 st.sidebar.header("About")
-st.sidebar.text("This app classifies messages as spam or ham using a Logistic Regression model.")
+st.sidebar.text("This app classifies messages as spam or ham using a Bernoulli Naive Bayes model.")
