@@ -3,8 +3,8 @@ import joblib
 import pandas as pd
 
 # Load the saved model and vectorizer
-model = joblib.load('bernoulli_NB_TFIDF(0.991928).pkl')
-vectorizer = joblib.load('tfidf_vectorizer.pkl')
+model = joblib.load('limited_bernoulli_NB_TFIDF(0.991928).pkl')
+vectorizer = joblib.load('limited_tfidf_vectorizer.pkl')
 
 # Set up the Streamlit app
 st.title("Spam/Ham Classifier")
