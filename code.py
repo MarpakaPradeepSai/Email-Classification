@@ -13,6 +13,26 @@ st.write("Enter a message to classify it as spam or ham.")
 # Text input for user message
 user_input = st.text_area("Message")
 
+# Add custom CSS for button styling
+st.markdown(
+    """
+    <style>
+    .stButton > button {
+        background-color: #007BFF;  /* Blue color */
+        color: white;               /* Text color */
+        border: none;               /* Remove border */
+        padding: 10px 20px;         /* Padding */
+        border-radius: 5px;         /* Rounded corners */
+        cursor: pointer;             /* Pointer cursor on hover */
+    }
+    .stButton > button:hover {
+        background-color: #0056b3;  /* Darker blue on hover */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 if st.button("Classify"):
     # Preprocess and transform the input
     input_data = vectorizer.transform([user_input])
