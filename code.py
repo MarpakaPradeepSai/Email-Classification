@@ -7,7 +7,7 @@ model = joblib.load('limited_bernoulli_NB_TFIDF(0.991928).pkl')
 vectorizer = joblib.load('limited_tfidf_vectorizer.pkl')
 
 # Set up the Streamlit app
-st.markdown("<h1 style='text-align: center;'>Spam/Ham Classifier</h1>", unsafe_allow_html=True)
+st.title("Spam/Ham Classifier")
 st.write("Enter a message to classify it as spam or ham.")
 
 # Text input for user message
@@ -21,9 +21,9 @@ st.markdown(
         background-color: #007BFF;  /* Blue color */
         color: white !important;     /* Text color */
         border: none;                /* Remove border */
-        padding: 10px 20px;         /* Padding */
-        border-radius: 5px;         /* Rounded corners */
-        cursor: pointer;             /* Pointer cursor on hover */
+        padding: 10px 20px;          /* Padding */
+        border-radius: 5px;          /* Rounded corners */
+        cursor: pointer;              /* Pointer cursor on hover */
     }
     .stButton > button:hover {
         background-color: #0056b3;   /* Darker blue on hover */
